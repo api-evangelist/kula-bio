@@ -1,17 +1,33 @@
 aid: kula-bio
 name: Kula Bio
-description: 'Kula Bio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Kula Bio is an agricultural biotechnology company headquartered in Natick, Massachusetts that
+  manufactures Kula-N, a nitrogen-fixing microbial biofertilizer built on the bacterium Xanthobacter
+  autotrophicus. The company's process, originating in Dr. Dan Nocera's research, "supercharges" the
+  microbe with renewable energy so it fixes atmospheric nitrogen at the root zone, letting growers
+  replace a portion of synthetic nitrogen while cutting the greenhouse-gas footprint of the applied
+  product. Kula Bio sells a liquid formulation and, since February 2026, a Soluble Powder (SP) line,
+  serving produce and row-crop growers through agronomic distribution rather than through software.
+  It raised a $50M Series A led by Lowercarbon Capital and was named to TIME's list of America's Top
+  GreenTech Companies of 2026. Kula Bio publishes no developer program, API, SDK, or machine-readable
+  contract of any kind; this profile records that measured absence alongside its verified public
+  corporate surface.
 url: https://raw.githubusercontent.com/api-evangelist/kula-bio/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/669e8de72476f4b31efa3737/669e8de72476f4b31efa375a_kb-logo.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Agriculture
+- AgTech
+- Biotechnology
+- Fertilizer
+- Sustainability
+- Climate
+- Manufacturing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,51 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/kula-bio-domain-security.yml
+- type: LLMsTxt
+  url: llms/kula-bio-llms.txt
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.kulabio.com/
+- type: About
+  url: https://www.kulabio.com/about
+- type: Blog
+  url: https://www.kulabio.com/news
+- type: TermsOfService
+  url: https://www.kulabio.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.kulabio.com/privacy
+- type: Contact
+  url: https://www.kulabio.com/contact
+- type: Product
+  url: https://www.kulabio.com/product
+- type: LinkedIn
+  url: https://www.linkedin.com/company/kulabio
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Kula Bio manufactures Kula-N, a physical nitrogen-fixing microbial biofertilizer sold to growers
+    through agronomic distribution; its entire web presence is an eight-page Webflow marketing site
+    with no developer, docs, or api subdomain in DNS, and every contract-discovery path probed on
+    www.kulabio.com (/openapi.json, /graphql, /llms.txt, /.well-known/agent-card.json) returned a
+    clean 404.
+  evidence:
+  - url: https://www.kulabio.com/
+    status: 200
+  - url: https://www.kulabio.com/openapi.json
+    status: 404
+  - url: https://www.kulabio.com/graphql
+    status: 404
+  - url: https://www.kulabio.com/llms.txt
+    status: 404
+  - url: https://www.kulabio.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.github.com/orgs/kulabio
+    status: 404
+  checked: '2026-08-23'

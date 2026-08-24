@@ -1,0 +1,44 @@
+generated: '2026-08-23'
+method: probed
+source: live GET probes of https://www.kulabio.com/.well-known/*
+note: >-
+  Every /.well-known/ path probed on the only host Kula Bio operates returned a clean HTTP 404
+  ("Invalid .well-known request", 88 bytes) from the Webflow origin. Nothing was fetched and nothing
+  was saved, so hit_count is 0 and NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this
+  file records a measured absence, not a served surface. The host is not a soft-404 catch-all: the
+  control probe below returns the site's real 404 page with a distinct status and byte count.
+hit_count: 0
+hosts:
+- host: https://www.kulabio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/mcp.json
+    status: 404
+    file: null
+soft_404_control:
+  url: https://www.kulabio.com/this-path-should-not-exist-xyz123
+  status: 404
+  bytes: 906
+  note: >-
+    Control path returns the Webflow 404 page (906 bytes) while /.well-known/* returns an 88-byte
+    "Invalid .well-known request" body — both are real 404s, so no 200 catch-all inflation is possible.
