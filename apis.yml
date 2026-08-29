@@ -13,6 +13,17 @@ description: >-
   contract of any kind; this profile records that measured absence alongside its verified public
   corporate surface.
 url: https://raw.githubusercontent.com/api-evangelist/kula-bio/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/669e8de72476f4b31efa3737/669e8de72476f4b31efa375a_kb-logo.svg
 x-type: company
 x-source: harvest:secondary-market
